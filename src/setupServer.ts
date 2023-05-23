@@ -7,13 +7,15 @@ import cookieSession from 'cookie-session';
 import HTTP_STATUS from 'http-status-codes';
 import compression from 'compression';
 import 'express-async-errors';
-import { config } from './config';
 import { Server } from 'socket.io';
 import { createClient } from 'redis';
 import { createAdapter } from '@socket.io/redis-adapter';
-import applicationRoutes from './routes';
-import { CustomError, IErrorResponse } from './shared/globals/helpers/error-handler';
 import Logger from 'bunyan';
+
+import { CustomError, IErrorResponse } from '@global/helpers/error-handler';
+import applicationRoutes from '@root/routes';
+import { config } from '@root/config';
+
 
 const PORT = 5000;
 const log: Logger = config.createLogger('setupServer');
@@ -119,5 +121,7 @@ export class ChattyServer {
     });
   }
 
-  private socketIOConnection(io: Server) {}
+  private socketIOConnection(io: Server): void {
+    log.info(`socketIOConnections: ${io}`);
+  }
 }

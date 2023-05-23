@@ -4,11 +4,13 @@
   "description": "",
   "main": "app.js",
   "scripts": {
+    "start": "nodemon ./build/app.js",
     "dev": "nodemon -r tsconfig-paths/register src/app.ts | ./node_modules/.bin/bunyan",
     "lint:check": "eslint 'src/**/*.ts'",
     "lint:fix": "eslint 'src/**/*.ts' --fix",
     "prettier:check": "prettier --check 'src/**/*.{ts,json}'",
-    "prettier:fix": "prettier --write 'src/**/*.{ts,json}'"
+    "prettier:fix": "prettier --write 'src/**/*.{ts,json}'",
+    "build": "ttsc -p ."
   },
   "keywords": [],
   "author": "",
@@ -29,7 +31,9 @@
     "mongoose": "^7.1.1",
     "redis": "^4.6.6",
     "socket.io": "^4.6.1",
-    "typescript": "^5.0.4"
+    "ttsc": "^0.3.1",
+    "typescript": "^5.0.4",
+    "typescript-transform-paths": "^3.4.6"
   },
   "devDependencies": {
     "@types/bunyan": "^1.8.8",
