@@ -1,5 +1,6 @@
 import mongoose from 'mongoose';
 import Logger from 'bunyan';
+import colors from 'colors'
 
 import { config } from '@root/config';
 
@@ -12,6 +13,7 @@ export default () => {
       .connect(`${config.DATABASE_URL}`)
       .then(() => {
         log.info('Successfully connected to database!!!');
+        console.log(colors.green('Successfully!'));
       })
       .catch((error) => {
         log.error('Error: ', error);

@@ -1,4 +1,4 @@
-@baseUrl = http://localhost:5000
+@baseUrl = http://localhost:4000
 
 @urlPath = api/v1
 
@@ -10,9 +10,9 @@ withCredentials: true
 
 
 {
-    "username": "",
-    "password": "",
-    "email": "",
-    "avatarColor": "",
-    "avatarImage": ""
+    "username": "Jahid Hossain Mridha",
+    "password": "1234@Qwer",
+    "email": "jahid4k@gmail.com",
+    "avatarColor": "red",
+    "avatarImage": "redimage"
 }

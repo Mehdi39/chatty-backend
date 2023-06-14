@@ -20,6 +20,7 @@
     "bcryptjs": "^2.4.3",
     "bunyan": "^1.8.15",
     "cloudinary": "^1.37.0",
+    "colors": "^1.4.0",
     "compression": "^1.7.4",
     "cookie-session": "^2.0.0",
     "cors": "^2.8.5",
