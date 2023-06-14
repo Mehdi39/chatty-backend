@@ -16,8 +16,7 @@ import { CustomError, IErrorResponse } from '@global/helpers/error-handler';
 import applicationRoutes from '@root/routes';
 import { config } from '@root/config';
 
-
-const PORT = 5000;
+const PORT = 4000;
 const log: Logger = config.createLogger('setupServer');
 
 export class ChattyServer {
@@ -97,6 +96,7 @@ export class ChattyServer {
       this.socketIOConnection(socketIO);
     } catch (error) {
       log.error(error);
+      console.log('Error from startServer: ', error);
     }
   }
 
