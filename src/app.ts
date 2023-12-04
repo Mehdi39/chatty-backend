@@ -3,7 +3,7 @@ import express, { Express } from 'express';
 import { ChattyServer } from '@root/setupServer';
 import connectDB from '@root/setupDatabase';
 import { config } from '@root/config';
-
+// comments
 class Application {
   public initialize(): void {
     this.loadConfig();
