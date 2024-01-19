@@ -1,7 +1,8 @@
 import mongoose from 'mongoose';
 import Logger from 'bunyan';
+import colors from 'colors'
 
-import { config } from './config';
+import { config } from '@root/config';
 
 const log: Logger = config.createLogger('setupDatabase');
 // const url: string = 'mongodb+srv://jahid4k:uxu6aouaRExKLTq8@chattyclusterone.gupscn1.mongodb.net/chatty?retryWrites=true&w=majority'
@@ -11,10 +12,12 @@ export default () => {
     mongoose
       .connect(`${config.DATABASE_URL}`)
       .then(() => {
-        log.info('Successfully connected to database!');
+        log.info('Successfully connected to database!!!');
+        console.log(colors.green('Successfully!'));
       })
       .catch((error) => {
         log.error('Error: ', error);
+        console.log(error.message);
         return process.exit(1);
       });
   };
